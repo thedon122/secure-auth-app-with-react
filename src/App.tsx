@@ -23,3 +23,20 @@ function App() {
             }
         )();
     });
+
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Nav name={name} setName={setName}/>
+
+                <main className="form-signin">
+                    <Route path="/" exact component={() => <Home name={name}/>}/>
+                    <Route path="/login" component={() => <Login setName={setName}/>}/>
+                    <Route path="/register" component={Register}/>
+                </main>
+            </BrowserRouter>
+        </div>
+    );
+}
+
+export default App;
