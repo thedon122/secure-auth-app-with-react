@@ -19,3 +19,12 @@ const Login = (props: { setName: (name: string) => void }) => {
                 password
             })
         });
+
+        const content = await response.json();
+
+        setRedirect(true);
+        props.setName(content.name);
+    }
+
+    if (redirect) {
+        return <Redirect to="/"/>;
