@@ -34,3 +34,18 @@ const Nav = (props: { name: string, setName: (name: string) => void }) => {
             </ul>
         )
     }
+
+    return (
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <div className="container-fluid">
+                <Link to="/" className="navbar-brand">Home</Link>
+
+                <div>
+                    {menu}
+                </div>
+            </div>
+        </nav>
+    );
+};
+
+export default Nav;
